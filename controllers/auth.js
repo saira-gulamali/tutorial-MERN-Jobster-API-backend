@@ -18,7 +18,6 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   const { email, password } = req.body;
-  console.log({ email, password });
 
   if (!email || !password) {
     throw new BadRequestError("Please provide email and password");
@@ -44,14 +43,9 @@ const login = async (req, res) => {
   });
 };
 
-// const updateUser = async (req, res) => {
-//   console.log({ user: req.user, body: req.body });
-
-//   res.status(200).send();
-// };
-
 const updateUser = async (req, res) => {
   const { email, name, lastName, location } = req.body;
+
   if (!email || !name || !lastName || !location) {
     throw new BadRequestError("Please provide all values");
   }

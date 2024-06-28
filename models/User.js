@@ -41,10 +41,9 @@ const UserSchema = new mongoose.Schema({
 });
 
 UserSchema.pre("save", async function () {
-  // checks the modified fields and returns early if password is not updated
   // console.log(this.modifiedPaths());
+  // checks the modified fields and returns early if password is not updated
   if (!this.isModified("password")) return;
-  console.log("updating password", this.password);
 
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
@@ -52,7 +51,7 @@ UserSchema.pre("save", async function () {
 
 UserSchema.methods.createJWT = function () {
   return jwt.sign(
-    { userId: this._id, name: this.name },
+    { userId: this._id, name: this.name, email: this.email },
     process.env.JWT_SECRET,
     {
       expiresIn: process.env.JWT_LIFETIME,
@@ -62,7 +61,7 @@ UserSchema.methods.createJWT = function () {
 
 UserSchema.methods.comparePassword = async function (canditatePassword) {
   const isMatch = await bcrypt.compare(canditatePassword, this.password);
-  console.log({ isMatch });
+
   return isMatch;
 };
 
