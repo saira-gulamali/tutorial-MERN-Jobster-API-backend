@@ -1,4 +1,4 @@
-# 06 - Jobster API Backend
+# 06.5 - Jobster API Backend
 
 Taken from John Smilga - Node Course - Section 10 - Jobster API
 
@@ -6,7 +6,7 @@ Taken from John Smilga - Node Course - Section 10 - Jobster API
 
 Full stack App (API and React frontend) providing data for Jobs, with authenticated/protected routes.
 
-This app is built ontop of and has additional filter, sort and pagination functionality. It also uses mongoDB aggregation pipeline to provide stats.
+This app is built ontop of Jobs API and has additional filter, sort and pagination functionality. It also uses mongoDB aggregation pipeline to provide stats.
 
 This repo contains the backend only. For the frontend repo, refer to https://github.com/saira-gulamali/tutorial-MERN-Jobster-API-frontend
 
