@@ -34,7 +34,7 @@ This repo contains the backend only. For the frontend repo, refer to https://git
 
 ## Usage
 
-### backend
+### backend DEV
 
 - npm install
 
@@ -47,7 +47,7 @@ This repo contains the backend only. For the frontend repo, refer to https://git
 * CORS is the url of the frontend server
 * TESTUSER_ID is the mongoDB userId of the demo test user in the database (register a user called testUser@test.com and copy the user Id to the .env file)
 
-- npm start
+- npm run dev
 - connect with frontend
 
 #### Models
